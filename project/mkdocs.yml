@@ -1,0 +1,9 @@
+site_name: Proyecto ASIR
+pages:
+    - Home: index.md
+    - About: about.md
+    - Submenu:
+      - Contacto: contact.md
+      - 'Videos en Youtube': video.md
+markdown_extensions:
+  - admonition
