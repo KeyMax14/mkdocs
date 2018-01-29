@@ -11,5 +11,5 @@ def deploy():
     with cd("~/github-repositories/mkdocs"):
         run("git pull")
     with cd("~/github-repositories/mkdocs/project"):
-        run("source /home/alu5905/.virtualenvs/mkdocs/bin/activate")
-        run("mkdocs build")
+        run("source /home/alu5905/.virtualenvs/mkdocs/bin/activate && mkdocs build")
+        # run("mkdocs build")
