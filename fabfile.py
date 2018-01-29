@@ -9,7 +9,7 @@ env.hosts = ["cloud"]
 def deploy():
     local("git push")
     with cd("~/github-repositories/mkdocs"):
-        run("git pull")
-        run("source /home/alu5905/.virtualenvs/mkdocs/bin/activate")
-	cd("~/github-repositories/mkdocs/project")
+	run("git pull")
+	run("source /home/alu5905/.virtualenvs/mkdocs/bin/activate")
+    with cd("~/github-repositories/mkdocs/project"):
 	run("mkdocs build")
