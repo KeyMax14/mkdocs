@@ -1,4 +1,4 @@
-from fabric.api import env, cd, local, run
+from fabric.api import env, cd, local, run, prefix
 
 # nombre de la máquina de producción
 env.hosts = ["cloud"]
@@ -10,6 +10,7 @@ def deploy():
     local("git push")
     with cd("~/github-repositories/mkdocs"):
         run("git pull")
-    with cd("~/github-repositories/mkdocs/project"):
-        run("source /home/alu5905/.virtualenvs/mkdocs/bin/activate && mkdocs build")
-        # run("mkdocs build")
+    with prefix("source ~/.virtualenvs/vmweb/bin/activate"):
+        with cd("~/github-repositories/mkdocs/project"):
+            run("source /home/alu5905/.virtualenvs/mkdocs/bin/activate")
+            run("mkdocs build")
