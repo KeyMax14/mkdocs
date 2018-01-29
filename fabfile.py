@@ -10,7 +10,6 @@ def deploy():
     local("git push")
     with cd("~/github-repositories/mkdocs"):
         run("git pull")
-    with prefix("source ~/.virtualenvs/vmweb/bin/activate"):
+    with prefix("source /home/alu5905/.virtualenvs/mkdocs/bin/activate"):
         with cd("~/github-repositories/mkdocs/project"):
-            run("source /home/alu5905/.virtualenvs/mkdocs/bin/activate")
             run("mkdocs build")
